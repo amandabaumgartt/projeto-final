@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flashcards de Estudos</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Flashcards de Estudos</h1>
+  </header>
+
+  <main>
+    <div class="flashcard-container">
+      <div class="flashcard">
+        <div class="front">
+          <p>O que é HTML?</p>
+        </div>
+        <div class="back">
+          <p>HTML significa HyperText Markup Language. É usado para criar a estrutura de páginas web.</p>
+        </div>
+      </div>
+      <button class="flip-btn">Virar</button>
+    </div>
+
+    <div class="flashcard-container">
+      <div class="flashcard">
+        <div class="front">
+          <p>O que é CSS?</p>
+        </div>
+        <div class="back">
+          <p>CSS significa Cascading Style Sheets. É usado para estilizar páginas web.</p>
+        </div>
+      </div>
+      <button class="flip-btn">Virar</button>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2024 - Flashcards para Estudo</p>
+  </footer>
+
+  <script>
+    const flipButtons = document.querySelectorAll('.flip-btn');
+
+    flipButtons.forEach((btn) => {
+      const flashcard = btn.previousElementSibling;
+      btn.addEventListener('click', () => {
+        flashcard.classList.toggle('flipped');
+      });
+    });
+  </script>
+</body>
+</html>
